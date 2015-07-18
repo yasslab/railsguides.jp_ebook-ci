@@ -19,8 +19,11 @@ RUN apt-get install -y texlive-lang-cjk texlive-fonts-recommended
 # install bundler
 RUN gem install bundler --no-rdoc --no-ri
 
-# ruby2.1-dev for redcarpet
-RUN apt-get install -y ruby2.1-dev
+# for native extension
+RUN apt-get install -y ruby2.1-dev make gcc
+
+# imagemagick for hamidashi(rmagick)
+RUN apt-get install -y imagemagick libmagick++-dev
 
 # git for gems from git repo
 RUN apt-get install -y git-core
