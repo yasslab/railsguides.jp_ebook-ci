@@ -31,3 +31,6 @@ RUN apt-get install -y imagemagick libmagick++-dev
 
 # git for gems from git repo
 RUN apt-get install -y git-core
+
+# epubcheck
+RUN apt-get install -y openjdk-7-jre
