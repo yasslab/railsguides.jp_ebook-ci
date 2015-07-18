@@ -14,7 +14,11 @@ RUN locale-gen en_US.UTF-8
 RUN update-locale en_US.UTF-8
 
 # install Re:VIEW environment
+## for pdf
 RUN apt-get install -y texlive-lang-cjk texlive-fonts-recommended
+
+## for epub
+RUN apt-get install -y --no-install-recommends zip
 
 # install bundler
 RUN gem install bundler --no-rdoc --no-ri
