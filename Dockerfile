@@ -21,3 +21,6 @@ RUN gem install bundler --no-rdoc --no-ri
 
 # ruby2.1-dev for redcarpet
 RUN apt-get install -y ruby2.1-dev
+
+# git for gems from git repo
+RUN apt-get install -y git-core
