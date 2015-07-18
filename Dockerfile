@@ -19,5 +19,5 @@ RUN apt-get install -y texlive-lang-cjk texlive-fonts-recommended
 # install bundler
 RUN gem install bundler --no-rdoc --no-ri
 
-# jre for epubcheck, imagemagick for hamidashi, ruby2.1-dev for bundle install
-RUN apt-get install -y ruby2.1-dev imagemagick openjdk-7-jre
+# ruby2.1-dev for redcarpet
+RUN apt-get install -y ruby2.1-dev
