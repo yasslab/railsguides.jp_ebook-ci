@@ -1,7 +1,7 @@
 # based on vvakame/review
 # https://github.com/vvakame/docker-review
 
-FROM debian:jessie
+FROM ruby:2.4.1
 
 ENV LANG en_US.UTF-8
 
@@ -21,9 +21,6 @@ RUN apt-get install -y --no-install-recommends zip
 
 # install bundler
 RUN gem install bundler --no-rdoc --no-ri
-
-# for native extension
-RUN apt-get install -y ruby2.1-dev make gcc
 
 # imagemagick for hamidashi(rmagick)
 RUN apt-get install -y imagemagick libmagick++-dev
