@@ -30,4 +30,4 @@ RUN apt-get install -y imagemagick libmagick++-dev
 RUN apt-get install -y git-core
 
 # epubcheck
-RUN apt-get install -y openjdk-7-jre
+RUN apt-get install -y default-jre
