@@ -2,7 +2,6 @@
 # https://github.com/vvakame/docker-review
 
 FROM debian:jessie
-MAINTAINER yasslab
 
 ENV LANG en_US.UTF-8
 
