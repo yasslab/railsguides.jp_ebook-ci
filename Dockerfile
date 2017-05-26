@@ -3,14 +3,7 @@
 
 FROM ruby:2.4.1
 
-ENV LANG en_US.UTF-8
-
-# setup
-RUN apt-get update
-RUN apt-get install -y locales
-RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-RUN locale-gen en_US.UTF-8
-RUN update-locale en_US.UTF-8
+ENV LANG C.UTF-8
 
 # install Re:VIEW environment
 ## for pdf
