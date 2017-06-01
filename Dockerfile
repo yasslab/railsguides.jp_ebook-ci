@@ -17,6 +17,8 @@ RUN cd /texlive && \
     ./install-tl --profile /texlive/texlive.profile --repository http://mirror.ctan.org/systems/texlive/tlnet/
 RUN /usr/local/texlive/2016/bin/x86_64-linux/tlmgr path add; exit 0
 
+RUN apt-get update
+
 ## for epub
 RUN apt-get install -y --no-install-recommends zip
 
