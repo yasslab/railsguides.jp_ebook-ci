@@ -26,7 +26,7 @@ RUN apt-get install -y --no-install-recommends zip
 RUN gem install bundler --no-rdoc --no-ri
 
 # imagemagick for hamidashi(rmagick)
-RUN apt-get install -y imagemagick libmagick++-dev
+RUN apt-get install -y imagemagick libmagick++-dev ghostscript
 
 # git for gems from git repo
 RUN apt-get install -y git-core
