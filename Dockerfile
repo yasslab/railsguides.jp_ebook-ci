@@ -15,7 +15,7 @@ RUN cd /texlive && \
     tar xvf install-tl-unx.tar.gz && \
     cd install-tl* && \
     ./install-tl --profile /texlive/texlive.profile --repository http://mirror.ctan.org/systems/texlive/tlnet/
-RUN /usr/local/texlive/2016/bin/x86_64-linux/tlmgr path add; exit 0
+RUN /usr/local/texlive/2017/bin/x86_64-linux/tlmgr path add; exit 0
 
 RUN apt-get update
 
