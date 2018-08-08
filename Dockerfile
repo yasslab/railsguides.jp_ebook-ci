@@ -1,36 +1,35 @@
-# based on vvakame/review
-# https://github.com/vvakame/docker-review
-
-FROM debian:jessie
-MAINTAINER yasslab
+FROM ruby:2.5.1-slim
 
 ENV LANG en_US.UTF-8
+ENV GUIDES_LANGUAGE ja
 
-# setup
-RUN apt-get update
-RUN apt-get install -y locales
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      locales \
+      git-core \
+      curl \
+      gcc \
+      make \
+      zip \
+      # hamidashi
+      imagemagick \
+      libmagickwand-dev \
+      ghostscript \
+      # tex
+      texlive-lang-cjk \
+      latex-cjk-all \
+      texlive-lang-japanese \
+      texlive-latex-extra \
+      texlive-fonts-recommended \
+      # epubcheck
+      openjdk-8-jre-headless \
+      # railsguides.jp
+      g++ \
+      default-libmysqlclient-dev \
+      libpq-dev \
+      libsqlite3-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN sed -ie 's/name="disk" value="1GiB"/name="disk" value="10GiB"/g' /etc/ImageMagick-6/policy.xml
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-RUN locale-gen en_US.UTF-8
-RUN update-locale en_US.UTF-8
-
-# install Re:VIEW environment
-## for pdf
-RUN apt-get install -y texlive-lang-cjk texlive-fonts-recommended
-
-## for epub
-RUN apt-get install -y --no-install-recommends zip
-
-# install bundler
-RUN gem install bundler --no-rdoc --no-ri
-
-# for native extension
-RUN apt-get install -y ruby2.1-dev make gcc
-
-# imagemagick for hamidashi(rmagick)
-RUN apt-get install -y imagemagick libmagick++-dev
-
-# git for gems from git repo
-RUN apt-get install -y git-core
-
-# epubcheck
-RUN apt-get install -y openjdk-7-jre
+RUN locale-gen en_US.UTF-8 && update-locale en_US.UTF-8
